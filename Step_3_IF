@@ -9,3 +9,22 @@ elif a%2 ==0 and 6> a >20 or 2<= a <=5:
 
 #if __name__ == '__main__':
 #    n = int(raw_input())
+
+
+
+n = int(input().strip())
+check = {True: "Not Weird", False: "Weird"}
+
+print(check[
+        n%2==0 and (
+            n in [i for i in range(2,6)] or 
+            n > 20)
+    ])
+
+
+# решения  
+n = int(raw_input())
+
+if n%2==0 and (n in range(2,6) or n>20 ):
+    print "Not",
+print "Weird"
