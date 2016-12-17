@@ -1,0 +1,14 @@
+a = [int(i) for i in input().split()]
+c = []
+b = len(a)
+if b % 2 != 0:
+    b  = b -1 
+for i in range (0,b,2):
+    c.append(a[i+1])
+    c.append(a[i])
+#c.append(a[len(a)-1])
+for i in c:
+    print(i, end=' ') 
+    
+    
+    
