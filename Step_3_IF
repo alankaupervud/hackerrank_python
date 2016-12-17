@@ -1,0 +1,11 @@
+a = int(input())
+if a%2>0 and 2> a >5 or 6 <= a <=20:  #условие и исключенный диапазон или нужный диапазон
+    print('Weird')
+elif a%2 ==0 and 6> a >20 or 2<= a <=5:
+    print('Not Weird')
+
+
+
+
+#if __name__ == '__main__':
+#    n = int(raw_input())
