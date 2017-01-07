@@ -55,3 +55,22 @@ for i in range (a[1]):          # считываем К попыток
             #else:
              #   b[l] = ['I']
 print(b)
+
+
+
+
+a = [int(i) for i in input().split()] # кол-во кег. и бросков
+b =[]       #спискок кег.
+c = []
+for i in range (1,int(a[0])+1): # создали список кег.
+    b.append(i)                 # создали список кег.
+for i in range (a[1]):          # считываем К попыток
+    c = [int(i) for i in input().split()] # будет c[0] и c[1]-диапазон сбитых
+    for j in range(c[0],c[1]):    # от c[0] До c[1] проходимся и заменяем на '.'
+        for l in range(a[0]):
+            if b[l] == j:
+                b[l] = ['.']
+            #else:
+             #   b[l] = ['I']
+print(b)
+
