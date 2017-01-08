@@ -1,0 +1,9 @@
+for p in range (1,7):
+    f1, f2  = [int(i) for i in input().split()]
+    for j in range (7):
+        g1, g2  = [int(i) for i in input().split()]
+        if f1 == g1 and ((f1-g2)+(f2-g1)==0) or f2 ==g2 and ((f1-g2)+(f2-g1)==0):
+            print('YES')
+            break
+print('NO')
+    
