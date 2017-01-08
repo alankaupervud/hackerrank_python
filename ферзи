@@ -21,3 +21,18 @@ for i in range (7):
             otvet ='YES'
             
 print(otvet)
+
+x = []
+y = []
+otvet ='NO'
+for i in range (8):
+    a, b = [int(i) for i in input().split()]
+    x.append(a)
+    y.append(b)
+#print(x,y)
+for i in range (7):
+    for j in range(i+1,8):
+        if x[i]==x[j] or abs(x[i]-y[i])==abs(x[j]-y[j])  or y[i]==y[j]: 
+            otvet ='YES'
+            
+print(otvet)
