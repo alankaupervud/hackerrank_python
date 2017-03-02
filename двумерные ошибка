@@ -1,0 +1,10 @@
+n = input()
+m= int(n[2])
+n= int(n[0])
+a= [[int(j) for j in input().split()]for i in range (n) ]
+for i in range (n):
+    for j in range (m-1):
+        if a[i][j] > a[i][j+1]:
+            st=i
+            stob= j
+print(st,stob)
