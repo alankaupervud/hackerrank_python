@@ -1,0 +1,18 @@
+a = [int(i) for i in input().split()]
+b = {''}
+c = {''}
+for i in range (a[0]):
+    b.add(int(input()))
+b.discard('')
+for i in range (a[1]):
+    c.add(int(input())) 
+c.discard('')
+ann = sorted(list(b - c))
+borison = sorted(list(c - b))
+first = sorted(list(c&b))
+v =[ann,borison,first]
+for j in v:
+    print(len(j))
+    for i in range(len(j)):
+        print(first[i])
+
