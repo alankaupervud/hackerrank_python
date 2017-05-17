@@ -20,3 +20,33 @@ v =[ann,borison,first]
 for j in v:
     print(len(j))
     print(' '.join(str(j)))
+    
+    
+    
+    a = [int(i) for i in input().split()]
+b = {''}
+c = {''}
+for i in range (a[0]):
+    b.add(int(input()))
+b.discard('')
+for i in range (a[1]):
+    c.add(int(input())) 
+c.discard('')
+ann = [str(i) for i in (list(b - c))]
+ann.sort()
+#print(m)
+#ann = sorted(m) 
+print(ann)
+borison = sorted([str(i) for i in (list(c - b))])
+first = sorted([str(i) for i in (list(c&b))])
+print(len(first))
+print(' '.join(first))
+print(len(ann))
+print(' '.join(ann))
+print(len(borison))
+print(' '.join(borison))
+
+
+
+
+
