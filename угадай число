@@ -1,0 +1,55 @@
+n = int(input())
+b = set(input().split())
+for i in range()):
+   
+    if input() = 'YES':
+        b.intersection_update(a)
+    else:
+        b.differense_update(a)
+    a = input().split()
+    
+    
+    n = int(input())
+b = set(input().split())
+a=set()
+while != 'HELP':
+    if input() == 'YES':
+        b.intersection_update(a)
+    else:
+        b.difference_update(a)
+    a = input().split()
+    
+    a = input()
+ryad1 = set(input().split())
+#s.discard(' ')
+while True:
+    otvet = input()
+    ryad2 = input()
+    if ryad2 == 'HELP':
+        break
+    else:
+        ryad2 = set(ryad2.split())
+        if otvet == 'YES':
+            ryad1.intersection_update(ryad2)
+        else:
+            ryad1.differense_update(ryad2)
+print (ryad1)
+    
+    
+    
+    a = input()
+ryad1 = set(input().split())
+ryad2 = set()
+while True:
+    otvet = input()
+    if ryad2 == 'HELP':
+        break
+    else:
+        ryad2 = set(ryad2.split())
+        if otvet == 'YES':
+            ryad1.intersection_update(ryad2)
+        else:
+            ryad1.differense_update(ryad2)
+    ryad2 = input()
+print (ryad1)
+    
