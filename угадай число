@@ -53,3 +53,24 @@ while True:
     ryad2 = input()
 print (ryad1)
     
+    
+    
+    
+    Вот это должно работать:
+n = int(input())
+a = set()
+for i in range(n):
+    a.add(i)
+while True:
+    b = input()
+    if b != "HELP":
+        b = set(b.split())
+        otvet = input()
+        if otvet == 'YES':
+            a.intersection_update(b)
+        else:
+            a.difference_update(b)
+    else:
+        break 
+print(*list(sorted(a)))
+    
