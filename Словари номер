@@ -1,0 +1,6 @@
+a = input()
+b = a.split()
+n = dict(zip(b,list([int(0)for i in range(len(b))])))
+for i in range (len(n)):
+    for j in range(i):
+        убивает значение, так как одинаковых ключей быть не может 
