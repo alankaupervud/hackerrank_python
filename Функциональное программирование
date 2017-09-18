@@ -1,0 +1,24 @@
+# Функция подсчета символов в строке
+
+def count_char (text, char):
+  count = 0
+  for c in text:
+    if c == char:
+      count += 1
+  return(count)
+text = 'jdsalkjfoirijewflkdgfhdsjf;lsdjflsa'
+a="j"
+
+print (count_char(text,a))
+
+
+
+# Функция высшего порядка:
+
+def apply_twice(func, arg):
+  return func(func(arg))
+
+def add_five(x):
+  return x+5
+
+print(apply_twice(add_five, 10))
