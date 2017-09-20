@@ -3,4 +3,23 @@ b = a.split()
 n = dict(zip(b,list([int(0)for i in range(len(b))])))
 for i in range (len(n)):
     for j in range(i):
-        убивает значение, так как одинаковых ключей быть не может 
+        убивает значение, так как одинаковых ключей быть не может
+        
+        
+        
+        СЛОВАРИ 2 -Я ЗАДАЧА ПОЧТИ РЕШЕНА ТОЛЬКО ОСТАЛОСЬ НАЙТИ СПОСОБ ПОИСКА ПО ЗНАЧЕНИЯМ
+        n = int(input())
+dicti = {}
+a = []
+list1 = []
+list2= []
+for j in range (n):
+    a = [ i for i in input().split()]
+    list1.append(a[0])
+    list2.append(a[1])
+dicti = dict(zip(list1,list2))
+value = input()
+try:
+    print(dicti.get(value))
+except KeyError:
+    print(dicti.keys(value))
