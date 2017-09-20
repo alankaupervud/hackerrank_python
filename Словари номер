@@ -23,3 +23,26 @@ try:
     print(dicti.get(value))
 except KeyError:
     print(dicti.keys(value))
+
+
+Правильное решение 
+def get_key(d, value):
+    for k, v in d.items():
+        if v == value:
+            return k
+            
+n = int(input())
+dicti = {}
+a = []
+list1 = []
+list2= []
+for j in range (n):
+    a = [ i for i in input().split()]
+    list1.append(a[0])
+    list2.append(a[1])
+dicti = dict(zip(list1,list2))
+value = input()
+try:
+    print(dicti[value])
+except :
+    print(get_key(dicti,value))
