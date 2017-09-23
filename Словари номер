@@ -46,3 +46,19 @@ try:
     print(dicti[value])
 except :
     print(get_key(dicti,value))
+    
+    
+    
+    Словари
+Задача «Выборы в США»
+    
+    n = int (input())
+D = dict()
+for i in range(n):
+    a,b = input().split()
+    c = int(D.get(a,0))
+    D[a] = int(c) + int( b) 
+L = sorted(list(D.keys()))
+#sorted(D.items(), key=lambda item: item[0])
+for key in L:
+    print(key, D[key])
