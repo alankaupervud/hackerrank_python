@@ -1,0 +1,180 @@
+права доступа 
+ACTION_PERMISSION = {
+    'read': 'R',
+    'write': 'W',
+    'execute': 'X',
+}
+ 
+file_permissions = {}
+for i in range(int(input())):
+    file, *permissions = input().split()
+    file_permissions[file] = set(permissions)
+ 
+for i in range(int(input())):
+    action, file = input().split()
+    if ACTION_PERMISSION[action] in file_permissions[file]:
+        print('OK')
+    else:
+        print('Access denied')
+        
+       
+    частотный анализ
+from collections import Counter
+ 
+words = []
+for _ in range(int(input())):
+    words.extend(input().split())
+ 
+counter = Counter(words)
+pairs = [(-pair[1], pair[0]) for pair in counter.most_common()]
+words = [pair[1] for pair in sorted(pairs)]
+print('\n'.join(words))
+
+
+страны и города 
+motherland = {}
+for i in range(int(input())):
+    country, *cities = input().split()
+    for city in cities:
+        motherland[city] = country
+         
+for i in range(int(input())):
+    print(motherland[input()])
+    
+    англо латинский словарь 
+    from collections import defaultdict
+ 
+latin_to_english = defaultdict(list)
+for i in range(int(input())):
+    english_word, latin_translations_chunk = input().split(' - ')
+    latin_translations = latin_translations_chunk.split(', ')
+    for latin_word in latin_translations:
+        latin_to_english[latin_word].append(english_word)
+     
+print(len(latin_to_english))
+for latin_word, english_translations in sorted(latin_to_english.items()):
+    print(latin_word + ' - ' + ', '.join(english_translations))
+
+
+
+контрольная по ударениям 
+
+n = int(input())
+accents = {}
+for i in range(n):
+    word = input()
+    base_form = word.lower()
+    if base_form not in accents:
+        accents[base_form] = set()
+    accents[base_form].add(word)
+ 
+errors = 0
+sent = input().split()
+for word in sent:
+    base_form = word.lower()
+    if (base_form in accents and word not in accents[base_form]
+            or len([l for l in word if l.isupper()]) != 1):
+        errors += 1
+print(errors)
+
+
+
+продажи 
+from collections import defaultdict
+from sys import stdin
+ 
+clients = defaultdict(lambda: defaultdict(int))
+for line in stdin.readlines():
+    client, thing, value = line.split()
+    clients[client][thing] += int(value)
+         
+for client in sorted(clients):
+    print(client + ':')
+    for thing in sorted(clients[client]):
+        print(thing, clients[client][thing])
+
+
+родословная подсчет уровней 
+
+def height(man):
+    if man not in p_tree:
+        return 0
+    else:
+        return 1 + height(p_tree[man])
+ 
+p_tree = {}
+n = int(input())
+for i in range(n - 1):
+    child, parent = input().split()
+    p_tree[child] = parent
+ 
+heights = {}
+for man in set(p_tree.keys()).union(set(p_tree.values())):
+    heights[man] = height(man)
+ 
+for key, value in sorted(heights.items()):
+    print(key, value)
+    
+    
+    родословная предки и потомки 
+
+def is_ancestor(man, older_man):
+    if man == older_man:
+        return True
+    while man in p_tree:
+        man = p_tree[man]
+        if man == older_man:
+            return True
+    return False
+     
+p_tree = dict()
+n = int(input())
+for i in range(n - 1):
+    child, parent = input().split()
+    p_tree[child] = parent
+ 
+for i in range(int(input())):
+    first, second = input().split()
+    if is_ancestor(second, first):
+        print(1, end=' ')
+    elif is_ancestor(first, second):
+        print(2, end=' ')
+    else:
+        print(0, end=' ')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+родословная LCA
+def ancestors(child, p_tree):
+    result = []
+    result.append(child)
+    while child in p_tree:
+        child = p_tree[child]
+        result.append(child)
+    return result
+ 
+p_tree = dict()
+n = int(input())
+for i in range(n - 1):
+    child, parent = input().split()
+    p_tree[child] = parent
+     
+m = int(input())
+for i in range(m):
+    child_1, child_2 = input().split()
+    ancestors_for_1 = set(ancestors(child_1, p_tree))
+    for ancestor in ancestors(child_2, p_tree):
+        if ancestor in ancestors_for_1:
+            print(ancestor)
+            break
