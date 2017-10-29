@@ -1,0 +1,160 @@
+Длина последовательности
+len = 0
+while int(input()) != 0:
+    len += 1
+print(len)
+
+
+Сумма последовательности
+sum = 0
+element = int(input())
+while element != 0:
+    sum += element
+    element = int(input())
+print(sum)
+
+среднее значение последовательности
+sum = 0
+len = 0
+element = int(input())
+while element != 0:
+    sum += element
+    len += 1
+    element = int(input())
+print(sum / len)
+
+
+Максимум последовательности
+max = 0
+element = -1
+while element != 0:
+    element = int(input())
+    if element > max:
+        max = element
+print(max)
+
+
+Индекс максимума последовательности
+max = 0
+index_of_max = -1
+element = -1
+len = 0
+while element != 0:
+    element = int(input())
+    if element > max:
+        max = element
+        index_of_max = len
+    len += 1
+print(index_of_max)
+
+
+
+Количество четных элементов последовательности
+num_even = -1
+element = -1
+while element != 0:
+    element = int(input())
+    if element % 2 == 0:
+        num_even += 1
+print(num_even)
+
+Количество элементов, которые больше предыдущего
+prev = int(input())
+answer = 0
+while prev != 0:
+    next = int(input())
+    if next != 0 and prev < next:
+        answer += 1
+    prev = next
+print(answer)
+
+
+Второй максимум
+first_max = int(input())
+second_max = int(input())
+if first_max < second_max:
+    first_max, second_max = second_max, first_max
+element = int(input())
+while element != 0:
+    if element > first_max:
+        second_max, first_max = first_max, element
+    elif element > second_max:
+        second_max = element
+    element = int(input())
+print(second_max)
+
+
+Количество элементов, равных максимуму
+maximum = 0
+num_maximal = 0
+element = -1
+while element != 0:
+    element = int(input())
+    if element > maximum:
+        maximum, num_maximal = element, 1
+    elif element == maximum:
+        num_maximal += 1       
+print(num_maximal)
+
+
+числа фибрначчи
+n = int(input())
+if n == 0:
+    print(0)
+else:
+    a, b = 0, 1
+    for i in range(2, n + 1):
+        a, b = b, a + b
+    print(b)
+    
+    
+   Номер числа фибоначчи
+   a = int(input())
+if a == 0:
+    print(0)
+else:
+    fib_prev, fib_next = 0, 1
+    n = 1
+    while fib_next <= a:
+        if fib_next == a:
+            print(n)
+            break
+        fib_prev, fib_next = fib_next, fib_prev + fib_next
+        n += 1
+    else:
+        print(-1)
+        
+  Максимальное число идущих подряд равных элементов
+  prev = -1
+curr_rep_len = 0
+max_rep_len = 0
+element = int(input())
+while element != 0:
+    if prev == element:
+        curr_rep_len += 1
+    else:
+        prev = element
+        max_rep_len = max(max_rep_len, curr_rep_len)
+        curr_rep_len = 1
+    element = int(input())
+max_rep_len = max(max_rep_len, curr_rep_len)
+print(max_rep_len)
+
+
+
+Стандартное отклонение
+
+from math import sqrt
+ 
+partial_sum = 0
+partial_sum_squares = 0
+x_i = int(input())
+n = 0
+while x_i != 0:
+    n += 1
+    partial_sum += x_i
+    partial_sum_squares += x_i ** 2
+    x_i = int(input())
+print(sqrt((partial_sum_squares - partial_sum ** 2 / n) / (n - 1)))
+
+
